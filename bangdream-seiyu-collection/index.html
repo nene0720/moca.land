@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>뱅드림 성우 사인 컬렉션</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">BanG Dream! Fan Archive</p>
+    <h1 class="sec-title">
+      <span class="en">Signed Collection</span>
+      <span class="ko">뱅드림 성우 사인 컬렉션</span>
+    </h1>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <input id="search" class="search" type="search" placeholder="캐릭터 · 성우 · 행사 검색" aria-label="검색">
+    </div>
+
+    <div class="filter-row">
+      <div class="chips" id="bandChips" aria-label="밴드 필터"></div>
+      <button id="toggleAll" class="toggle-all" type="button" hidden></button>
+    </div>
+
+    <section id="view" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <p>비공식 팬 페이지입니다. BanG Dream! 및 관련 명칭·캐릭터의 권리는 각 권리자에게 있습니다.</p>
+  </footer>
+
+  <dialog id="lightbox">
+    <form method="dialog"><button class="close" aria-label="닫기">&times;</button></form>
+    <img alt="">
+    <p class="cap"></p>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
