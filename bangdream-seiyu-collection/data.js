@@ -69,51 +69,51 @@ const ACTORS = [
   {
     id: 'arisa', character: '이치가야 아리사', cv: '이토 아야사', band: 'Poppin\'Party',
     signs: [
-      { event: 'teamY', image: 'images/2-ito-ayasa/teamy2025.jpg' },
+      { event: 'teamY', image: 'images/5-ito-ayasa/teamy2025.jpg' },
     ],
   },
   {
     id: 'yukina', character: '미나토 유키나', cv: '아이바 아이나', band: 'Roselia',
     signs: [
-      { event: 'kimchikura23', image: 'images/3-aiba-aina/kimchikura2023.jpg' },
-      { event: 'teamY', image: 'images/3-aiba-aina/teamy2025.jpg' },
-      { event: 'yumeTalk' },
+      { event: 'kimchikura23', image: 'images/16-aiba-aina/kimchikura2023.jpg' },
+      { event: 'teamY', image: 'images/16-aiba-aina/teamy2025.jpg' },
+      { event: 'yumeTalk', image: 'images/16-aiba-aina/img_3263.jpg' },
     ],
   },
   {
     id: 'sayo', character: '히카와 사요', cv: '쿠도 하루카', band: 'Roselia',
     signs: [
-      { event: 'kudoFan', image: 'images/4-kudo-haruka/img_3260.jpg' },
+      { event: 'kudoFan', image: 'images/17-kudo-haruka/img_3260.jpg' },
     ],
   },
   {
     id: 'lisa', character: '이마이 리사', cv: '나카시마 유키', band: 'Roselia',
     signs: [
-      { event: 'nakashimaFan', image: 'images/5-nakashima-yuki/20261124_204654.jpg' },
+      { event: 'nakashimaFan', image: 'images/18-nakashima-yuki/20261124_204654.jpg' },
     ],
   },
   {
     id: 'kaoru', character: '세타 카오루', cv: '타도코로 아즈사', band: 'Hello, Happy World!',
     signs: [
-      { event: 'tadokoroFan', image: 'images/6-tatokoro-azusa/20260614_025320.jpg' },
+      { event: 'tadokoroFan', image: 'images/22-tatokoro-azusa/20260614_025320.jpg' },
     ],
   },
   {
     id: 'mashiro', character: '쿠라타 마시로', cv: '신도 아마네', band: 'Morfonica',
     signs: [
-      { event: 'shindoFan', image: 'images/7-shindo-amane/img_4191.jpg' },
+      { event: 'shindoFan', image: 'images/26-shindo-amane/img_4191.jpg' },
     ],
   },
   {
     id: 'pareo', character: '파레오', cv: '쿠라치 레오', band: 'RAISE A SUILEN',
     signs: [
-      { event: 'kimkuku24', image: 'images/8-kurachi-reo/kimchikura2024.jpg' },
+      { event: 'kimkuku24', image: 'images/35-kurachi-reo/kimchikura2024.jpg' },
     ],
   },
   {
     id: 'rana', character: '카나메 라나', cv: '아오키 히나', band: 'MyGO!!!!!',
     signs: [
-      { event: 'agf2023', image: 'images/9-aoki-hina/20231211_195831.jpg' },
+      { event: 'agf2023', image: 'images/40-aoki-hina/20231211_195831.jpg' },
     ],
   },
 ];

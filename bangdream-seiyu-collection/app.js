@@ -2,19 +2,20 @@
   const $ = (s) => document.querySelector(s);
   const WARN_TAGS = new Set(['복제', '중고구매']);
 
-  // 접은 카드 목록은 브라우저에 저장해서 새로고침해도 유지 (저장소를 못 쓰는 환경이면 그냥 메모리로만 동작)
-  const COLLAPSED_KEY = 'seiyu.collapsed.sample';
-  const loadCollapsed = () => {
+  // 카드는 처음에 모두 접힌 상태. 펼친 카드 목록만 브라우저에 저장해서 새로고침해도 유지
+  // (저장소를 못 쓰는 환경이면 그냥 메모리로만 동작)
+  const OPENED_KEY = 'seiyu.opened';
+  const loadOpened = () => {
     try {
-      const ids = JSON.parse(localStorage.getItem(COLLAPSED_KEY) || '[]');
+      const ids = JSON.parse(localStorage.getItem(OPENED_KEY) || '[]');
       return new Set(Array.isArray(ids) ? ids.filter((id) => typeof id === 'string') : []);
     } catch { return new Set(); }
   };
-  const saveCollapsed = () => {
-    try { localStorage.setItem(COLLAPSED_KEY, JSON.stringify([...state.collapsed])); } catch { /* 무시 */ }
+  const saveOpened = () => {
+    try { localStorage.setItem(OPENED_KEY, JSON.stringify([...state.opened])); } catch { /* 무시 */ }
   };
 
-  const state = { band: 'all', q: '', collapsed: loadCollapsed() };
+  const state = { band: 'all', q: '', opened: loadOpened() };
 
   // 작은 DOM 헬퍼 (textContent 사용)
   function h(tag, attrs = {}, ...kids) {
@@ -64,10 +65,10 @@
     list.forEach((s) => { if (!byActor.has(s.actor)) byActor.set(s.actor, []); byActor.get(s.actor).push(s); });
     return h('div', { class: 'grid' }, [...byActor].map(([actor, items]) =>
       h('details', {
-        class: 'card', style: cvar(actor), open: !state.collapsed.has(actor.id),
+        class: 'card', style: cvar(actor), open: state.opened.has(actor.id),
         ontoggle: (e) => {
-          if (e.target.open) state.collapsed.delete(actor.id); else state.collapsed.add(actor.id);
-          saveCollapsed();
+          if (e.target.open) state.opened.add(actor.id); else state.opened.delete(actor.id);
+          saveOpened();
           updateToggleAll();
         },
       },
