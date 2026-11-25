@@ -1,6 +1,5 @@
 (() => {
   const $ = (s) => document.querySelector(s);
-  const WARN_TAGS = new Set(['복제', '중고구매']);
 
   // 카드는 처음에 모두 접힌 상태. 펼친 카드 목록만 브라우저에 저장해서 새로고침해도 유지
   // (저장소를 못 쓰는 환경이면 그냥 메모리로만 동작)
@@ -49,14 +48,16 @@
       .filter(Boolean).join(' ').toLowerCase().includes(q);
   }
 
-  const tagEls = (tags = []) => tags.map((t) => h('span', { class: 'tag' + (WARN_TAGS.has(t) ? ' warn' : '') }, t));
+  const tagEls = (tags = []) => tags.map((t) => h('span', { class: 'tag' }, t));
 
   // 사인 사진 (image: 경로 한 개 또는 경로 배열). 사진이 없는 사인에는 아무것도 만들지 않음
+  // imagePos: 정사각형 틀에서 보여줄 기준 위치 (CSS object-position, 예: '50% 100%'). 배열이면 사진 순서대로 적용
   const photoEls = (sign, label) =>
     [].concat(sign.image || []).map((src, i, all) => {
       const cap = all.length > 1 ? `${label} (${i + 1}/${all.length})` : label;
+      const pos = Array.isArray(sign.imagePos) ? sign.imagePos[i] : sign.imagePos;
       return h('button', { class: 'photo', type: 'button', 'aria-label': `${cap} 사진 크게 보기`, onclick: () => openLightbox(src, cap) },
-        h('img', { src, alt: `${cap} 사인 사진`, loading: 'lazy' }));
+        h('img', { src, alt: `${cap} 사인 사진`, loading: 'lazy', style: pos ? `object-position:${pos}` : false }));
     });
 
   /* ───── 캐릭터별 ───── */

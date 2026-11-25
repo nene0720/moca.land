@@ -8,6 +8,8 @@
      (band 는 BANDS 의 이름과 똑같이 적어야 색이 적용됩니다. 목록에 없는 밴드는 BANDS 에도 한 줄 추가)
    - image: 사진 경로. 예) image: 'images/kasumi-agf2018.jpg'  (여러 장이면 배열: image: ['images/a.jpg', 'images/b.jpg'])
             사진이 있는 사인에만 사진이 크게 표시되고, 누르면 확대됩니다 (생략 가능)
+   - imagePos: 사진이 정사각형으로 잘릴 때 보여줄 위치 '가로% 세로%' (생략하면 가운데 '50% 50%')
+            세로로 긴 사진은 세로% (0% = 위, 100% = 아래), 가로로 긴 사진은 가로% (0% = 왼쪽, 100% = 오른쪽)
    - note : 짧은 메모 (생략 가능)
    - tags : 복제 / 중고구매 같은 표시 (생략 가능)
 */
@@ -61,7 +63,7 @@ const ACTORS = [
     signs: [
       //{ event: 'agf2018'},
       { event: 'kimkuku24', image: 'images/1-aimi/kimchikura2024.jpg' },
-      { event: 'teamY', image: 'images/1-aimi/teamy2025.jpg' },
+      { event: 'teamY', image: 'images/1-aimi/teamy2025.jpg', imagePos: '50% 80%' },
       { event: 'aimiFan', image: 'images/1-aimi/ricemonster.jpg' },
       { event: 'aimiLive' },
     ],
@@ -69,14 +71,14 @@ const ACTORS = [
   {
     id: 'arisa', character: '이치가야 아리사', cv: '이토 아야사', band: 'Poppin\'Party',
     signs: [
-      { event: 'teamY', image: 'images/5-ito-ayasa/teamy2025.jpg' },
+      { event: 'teamY', image: 'images/5-ito-ayasa/teamy2025.jpg', imagePos: '50% 100%' },
     ],
   },
   {
     id: 'yukina', character: '미나토 유키나', cv: '아이바 아이나', band: 'Roselia',
     signs: [
-      { event: 'kimchikura23', image: 'images/16-aiba-aina/kimchikura2023.jpg' },
-      { event: 'teamY', image: 'images/16-aiba-aina/teamy2025.jpg' },
+      { event: 'kimchikura23', image: 'images/16-aiba-aina/kimchikura2023.jpg', imagePos: '0% 50%' },
+      { event: 'teamY', image: 'images/16-aiba-aina/teamy2025.jpg', imagePos: '50% 100%' },
       { event: 'yumeTalk', image: 'images/16-aiba-aina/img_3263.jpg' },
     ],
   },
@@ -95,13 +97,13 @@ const ACTORS = [
   {
     id: 'kaoru', character: '세타 카오루', cv: '타도코로 아즈사', band: 'Hello, Happy World!',
     signs: [
-      { event: 'tadokoroFan', image: 'images/22-tatokoro-azusa/20260614_025320.jpg' },
+      { event: 'tadokoroFan', image: 'images/22-tatokoro-azusa/20260614_025320.jpg', imagePos: '50% 0%' },
     ],
   },
   {
     id: 'mashiro', character: '쿠라타 마시로', cv: '신도 아마네', band: 'Morfonica',
     signs: [
-      { event: 'shindoFan', image: 'images/26-shindo-amane/img_4191.jpg' },
+      { event: 'shindoFan', image: 'images/26-shindo-amane/img_4191.jpg', imagePos: '34% 50%' },
     ],
   },
   {

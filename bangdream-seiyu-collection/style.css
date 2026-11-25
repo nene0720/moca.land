@@ -126,8 +126,6 @@ button.thumb { cursor: zoom-in; border-style: solid; border-color: var(--c); }
 .sign-meta { font-size: 12px; color: var(--muted); }
 
 .tag { display: inline-block; margin: 3px 4px 0 0; padding: 1px 9px; font-size: 11px; font-weight: 700; border-radius: 6px; background: var(--chip); color: var(--muted); }
-.tag.warn { background: #fff3cf; color: #a06a00; }
-
 
 .empty { text-align: center; color: var(--muted); padding: 64px 0; }
 
